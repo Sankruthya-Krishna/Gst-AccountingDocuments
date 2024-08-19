@@ -1,0 +1,48 @@
+{
+  "name": "gst",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@cap-js/postgres": "^1.10.0",
+    "@sap-cloud-sdk/http-client": "^3.18.0",
+    "@sap-cloud-sdk/resilience": "^3.18.0",
+    "@sap/cds": "^7",
+    "express": "^4",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "fiori": {
+      "lean_draft": true,
+      "bypass_draft": true
+    },
+    "requires": {
+      "db": {
+        "imp": "@cap-js/postgres",
+        "pool": {
+          "max": 20
+        }
+      },
+      "API_OPLACCTGDOCITEMCUBE_SRV": {
+        "kind": "odata-v2",
+        "model": "srv/external/API_OPLACCTGDOCITEMCUBE_SRV",
+        "csrf": true,
+        "csrfInBatch": true,
+        "[production]": {
+          "credentials": {
+            "destination": "S4HANA",
+            "path": "/sap/opu/odata/sap/API_OPLACCTGDOCITEMCUBE_SRV"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1718 @@
+{
+ "meta": {
+  "creator": "cds-dk 7.5.1"
+ },
+ "$version": "2.0",
+ "definitions": {
+  "API_OPLACCTGDOCITEMCUBE_SRV": {
+   "kind": "service",
+   "@cds.external": true,
+   "@m.IsDefaultEntityContainer": "true",
+   "@sap.message.scope.supported": "true",
+   "@sap.supported.formats": "atom json xlsx"
+  },
+  "API_OPLACCTGDOCITEMCUBE_SRV.A_OperationalAcctgDocItemCube": {
+   "kind": "entity",
+   "@cds.external": true,
+   "@cds.persistence.skip": true,
+   "@sap.creatable": "false",
+   "@sap.updatable": "false",
+   "@sap.deletable": "false",
+   "@sap.content.version": "1",
+   "@sap.label": "Operational Accounting Document Items",
+   "elements": {
+    "CompanyCode": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Company Code",
+     "notNull": true
+    },
+    "FiscalYear": {
+     "key": true,
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Fiscal Year",
+     "notNull": true
+    },
+    "AccountingDocument": {
+     "key": true,
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Journal Entry",
+     "notNull": true
+    },
+    "AccountingDocumentItem": {
+     "key": true,
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Posting View Item",
+     "@sap.quickinfo": "Journal Entry Posting View Item",
+     "notNull": true
+    },
+    "CompanyCodeName": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.label": "Company Code Name"
+    },
+    "ChartOfAccounts": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Chart of Accounts"
+    },
+    "AccountingDocumentItemType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Line Item ID",
+     "@sap.quickinfo": "Identification of the Line Item"
+    },
+    "ClearingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Clearing Date"
+    },
+    "ClearingCreationDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Clrg Creation Date",
+     "@sap.quickinfo": "Clearing Creation Date"
+    },
+    "ClearingAccountingDocument": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Clearing Journal Entry"
+    },
+    "IsCleared": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is Cleared",
+     "@sap.quickinfo": "Clearing Status: Is Cleared"
+    },
+    "PostingKey": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Posting Key"
+    },
+    "FinancialAccountType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Account Type"
+    },
+    "SpecialGLCode": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Special G/L",
+     "@sap.quickinfo": "Special G/L Indicator"
+    },
+    "SpecialGLTransactionType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Sp. G/L Trans.Type",
+     "@sap.quickinfo": "Special G/L Transaction Type"
+    },
+    "DebitCreditCode": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Debit/Credit Code"
+    },
+    "BusinessArea": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Area"
+    },
+    "BusinessAreaName": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Area Name"
+    },
+    "PartnerBusinessArea": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Partner Bus. Area",
+     "@sap.quickinfo": "Partner Business Area"
+    },
+    "TaxCode": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Tax Code",
+     "@sap.quickinfo": "Tax on Sales/Purchases Code"
+    },
+    "WithholdingTaxCode": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Withholding Tax Code"
+    },
+    "TaxType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Tax Type"
+    },
+    "TransactionTypeDetermination": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Transaction Key"
+    },
+    "ValueDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Value Date"
+    },
+    "AssignmentReference": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.label": "Assignment Reference"
+    },
+    "DocumentItemText": {
+     "type": "cds.String",
+     "length": 50,
+     "@sap.label": "Item Text"
+    },
+    "PartnerCompany": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Trading Partner",
+     "@sap.quickinfo": "Company ID of Trading Partner"
+    },
+    "FinancialTransactionType": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Financial Transaction Type"
+    },
+    "CorporateGroupAccount": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Corporate Group Account"
+    },
+    "PlanningLevel": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Planning Level"
+    },
+    "ControllingArea": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Controlling Area"
+    },
+    "ControllingAreaName": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.label": "Ctrlg Area Name",
+     "@sap.quickinfo": "Controlling Area Name"
+    },
+    "CostCenter": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Cost Center"
+    },
+    "CostCenterName": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.label": "Cost Center Name"
+    },
+    "Project": {
+     "type": "cds.String",
+     "length": 24,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Project"
+    },
+    "OrderID": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Order ID"
+    },
+    "BillingDocument": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Billing Document"
+    },
+    "SalesDocument": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Sales Document"
+    },
+    "SalesDocumentItem": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Sales Document Item"
+    },
+    "ScheduleLine": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Schedule Line"
+    },
+    "MasterFixedAsset": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Fixed Asset"
+    },
+    "FixedAsset": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Asset Subnumber"
+    },
+    "AssetTransactionType": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Ast Transaction Type",
+     "@sap.quickinfo": "Asset Transaction Type"
+    },
+    "AssetValueDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Asset Value Date"
+    },
+    "PersonnelNumber": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Personnel Number"
+    },
+    "IsSalesRelated": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is Sales Related"
+    },
+    "LineItemDisplayIsEnabled": {
+     "type": "cds.Boolean",
+     "@sap.label": "Line Item Display Enabled",
+     "@sap.quickinfo": "Indicator: Can Line Items Be Displayed by Account?"
+    },
+    "IsOpenItemManaged": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Open Item Management",
+     "@sap.quickinfo": "Managed on an Open Item Basis"
+    },
+    "IsNotCashDiscountLiable": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is Not Cash Discount Liable"
+    },
+    "IsAutomaticallyCreated": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is Automatically Created"
+    },
+    "IsUsedInPaymentTransaction": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is Used In Payment Transaction"
+    },
+    "OperationalGLAccount": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Operational G/L Acct",
+     "@sap.quickinfo": "Operational General Ledger Account"
+    },
+    "GLAccount": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "G/L Account"
+    },
+    "GLAccountName": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.label": "G/L Account Name"
+    },
+    "GLAccountLongName": {
+     "type": "cds.String",
+     "length": 50,
+     "@sap.label": "G/L Account Long Name"
+    },
+    "Customer": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Customer",
+     "@sap.quickinfo": "Customer Number"
+    },
+    "CustomerName": {
+     "type": "cds.String",
+     "length": 80,
+     "@sap.label": "Name of Customer"
+    },
+    "Supplier": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Supplier"
+    },
+    "SupplierName": {
+     "type": "cds.String",
+     "length": 80,
+     "@sap.label": "Name of Supplier"
+    },
+    "BranchAccount": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Branch Account"
+    },
+    "IsBalanceSheetAccount": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is Balance Sheet Account"
+    },
+    "ProfitLossAccountType": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Profit Loss Account Type"
+    },
+    "SpecialGLAccountAssignment": {
+     "type": "cds.String",
+     "length": 18,
+     "@sap.label": "Special G/L Assignmt",
+     "@sap.quickinfo": "Assignment Number for Special G/L Accounts"
+    },
+    "DueCalculationBaseDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Due Calculation Base Date"
+    },
+    "PaymentTerms": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Payment Terms",
+     "@sap.quickinfo": "Terms of Payment Key"
+    },
+    "CashDiscount1Days": {
+     "type": "cds.Decimal",
+     "precision": 3,
+     "scale": 0,
+     "@sap.label": "Cash Discount Days 1"
+    },
+    "CashDiscount2Days": {
+     "type": "cds.Decimal",
+     "precision": 3,
+     "scale": 0,
+     "@sap.label": "Cash Discount Days 2"
+    },
+    "NetPaymentDays": {
+     "type": "cds.Decimal",
+     "precision": 3,
+     "scale": 0,
+     "@sap.label": "Days Net",
+     "@sap.quickinfo": "Net Payment Terms Period"
+    },
+    "CashDiscount1Percent": {
+     "type": "cds.Decimal",
+     "precision": 5,
+     "scale": 3,
+     "@sap.label": "Disc. Percent 1",
+     "@sap.quickinfo": "Cash Discount Percentage 1"
+    },
+    "CashDiscount2Percent": {
+     "type": "cds.Decimal",
+     "precision": 5,
+     "scale": 3,
+     "@sap.label": "Disc. Percent 2",
+     "@sap.quickinfo": "Cash Discount Percentage 2"
+    },
+    "PaymentMethod": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Payment Method"
+    },
+    "PaymentBlockingReason": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Payment Blocking Reason"
+    },
+    "FixedCashDiscount": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Fixed Cash Discount"
+    },
+    "HouseBank": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "House Bank",
+     "@sap.quickinfo": "House Bank Key"
+    },
+    "BPBankAccountInternalID": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "BP Bank Account",
+     "@sap.quickinfo": "Business Partner Bank Account Internal ID"
+    },
+    "TaxDistributionCode1": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Tax Distr. Code 1",
+     "@sap.quickinfo": "Tax Code 1 for Distribution"
+    },
+    "TaxDistributionCode2": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Tax Distr. Code 2",
+     "@sap.quickinfo": "Tax Code 2 for Distribution"
+    },
+    "TaxDistributionCode3": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Tax Distr. Code 3",
+     "@sap.quickinfo": "Tax Code 3 for Distribution"
+    },
+    "InvoiceReference": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Invoice Reference"
+    },
+    "InvoiceReferenceFiscalYear": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Invoice Reference Fiscal Year"
+    },
+    "InvoiceItemReference": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Invoice Item Reference"
+    },
+    "FollowOnDocumentType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Follow-On Doc.Type",
+     "@sap.quickinfo": "Follow-On Document Type"
+    },
+    "StateCentralBankPaymentReason": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "SCB Indicator",
+     "@sap.quickinfo": "State Central Bank Indicator"
+    },
+    "SupplyingCountry": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Supplying Ctry/Reg.",
+     "@sap.quickinfo": "Supplying Country/Region"
+    },
+    "InvoiceList": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Invoice List"
+    },
+    "BillOfExchangeUsage": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Bill/Exchange Usage",
+     "@sap.quickinfo": "Bill of Exchange Usage Type"
+    },
+    "DunningKey": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Dunning Key"
+    },
+    "DunningBlockingReason": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Dunning Blocking Reason"
+    },
+    "LastDunningDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Last Dunned",
+     "@sap.quickinfo": "Date of Last Dunning Notice"
+    },
+    "DunningLevel": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Dunning Level"
+    },
+    "DunningArea": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Dunning Area"
+    },
+    "WithholdingTaxCertificate": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "WHT Certificate",
+     "@sap.quickinfo": "Withholding Tax Certificate"
+    },
+    "Material": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material",
+     "@sap.quickinfo": "Material Number"
+    },
+    "Product": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Product",
+     "@sap.quickinfo": "Product Number"
+    },
+    "Plant": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Plant"
+    },
+    "PurchasingDocument": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Purchasing Document"
+    },
+    "PurchasingDocumentItem": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Purchasing Doc. Item",
+     "@sap.quickinfo": "Purchasing Document Item"
+    },
+    "AccountAssignmentNumber": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Account Assgmt No.",
+     "@sap.quickinfo": "Sequential Number of Account Assignment"
+    },
+    "IsCompletelyDelivered": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is completely delivered"
+    },
+    "MaterialPriceControl": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Material Price Control",
+     "@sap.quickinfo": "Material Price Control Indicator"
+    },
+    "ValuationArea": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Valuation Area"
+    },
+    "InventoryValuationType": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Valuation Type"
+    },
+    "VATRegistration": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "VAT Registration"
+    },
+    "DelivOfGoodsDestCountry": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "C/R of Destination",
+     "@sap.quickinfo": "Country/Region of Destination for Delivery of Goods"
+    },
+    "PaymentDifferenceReason": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Payment Difference Reason"
+    },
+    "ProfitCenter": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Profit Center"
+    },
+    "ProfitCenterName": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.label": "Profit Center Name",
+     "@sap.quickinfo": "Description of Profit Center"
+    },
+    "JointVenture": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Joint Venture"
+    },
+    "JointVentureCostRecoveryCode": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Recovery Indicator"
+    },
+    "JointVentureEquityGroup": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Joint Venture Equity Group"
+    },
+    "JointVenturePartner": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Joint Venture Partner"
+    },
+    "TreasuryContractType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Treasury Contract Type"
+    },
+    "AssetContract": {
+     "type": "cds.String",
+     "length": 13,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Asset Contract"
+    },
+    "CashFlowType": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Flow Type"
+    },
+    "TaxJurisdiction": {
+     "type": "cds.String",
+     "length": 15,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Tax Jurisdiction"
+    },
+    "RealEstateObject": {
+     "type": "cds.String",
+     "length": 40,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Real Estate Object",
+     "@sap.quickinfo": "Internal Key for Real Estate Object"
+    },
+    "SettlementReferenceDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Reference Date",
+     "@sap.quickinfo": "Reference Date for Settlement"
+    },
+    "CommitmentItem": {
+     "type": "cds.String",
+     "length": 24,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Commitment Item"
+    },
+    "CostObject": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Cost Object"
+    },
+    "ProjectNetwork": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Network",
+     "@sap.quickinfo": "Network Number for Account Assignment"
+    },
+    "OrderInternalBillOfOperations": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Order Internal Bill of Operations",
+     "@sap.quickinfo": "Order Internal Bill of Operations ID"
+    },
+    "OrderIntBillOfOperationsItem": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Order Internal Bill of Operations Item"
+    },
+    "WBSElementInternalID": {
+     "type": "cds.String",
+     "length": 8,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "WBS Element",
+     "@sap.quickinfo": "WBS Element (Internal Number Without Conversion)"
+    },
+    "ProfitabilitySegment": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Profitability Segment"
+    },
+    "JointVentureBillingType": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Joint Venture Billing Type"
+    },
+    "JointVentureEquityType": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Joint Venture Equity Type"
+    },
+    "IsEUTriangularDeal": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is EU Triangular Deal"
+    },
+    "CostOriginGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Origin Group",
+     "@sap.quickinfo": "Origin Group as Subdivision of Cost Element"
+    },
+    "CompanyCodeCurrencyDetnMethod": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Co Crcy Detn Meth",
+     "@sap.quickinfo": "Company Code Currency Determination Method"
+    },
+    "ClearingIsReversed": {
+     "type": "cds.Boolean",
+     "@sap.label": "Clearing Is Reversed"
+    },
+    "PaymentMethodSupplement": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Payt Method Suplmnt",
+     "@sap.quickinfo": "Payment Method Supplement"
+    },
+    "AlternativeGLAccount": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Altern. G/L Account",
+     "@sap.quickinfo": "Alternative G/L Account Number In Company Code"
+    },
+    "FundsCenter": {
+     "type": "cds.String",
+     "length": 16,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Funds Center",
+     "@sap.quickinfo": "Funds Management Center"
+    },
+    "Fund": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Fund"
+    },
+    "PartnerProfitCenter": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Partner Profit Center"
+    },
+    "Reference1IDByBusinessPartner": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reference 1 ID By Business Partner",
+     "@sap.quickinfo": "ID of Reference 1 by Business Partner"
+    },
+    "Reference2IDByBusinessPartner": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reference 2 ID By Business Partner",
+     "@sap.quickinfo": "ID of Reference 2 by Business Partner"
+    },
+    "IsNegativePosting": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is Negative Posting"
+    },
+    "PaymentCardItem": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Payment Card Item"
+    },
+    "PaymentCardPaymentSettlement": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Payment Card Payment Settlement"
+    },
+    "CreditControlArea": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Credit Control Area"
+    },
+    "Reference3IDByBusinessPartner": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reference 3 ID By Business Partner",
+     "@sap.quickinfo": "ID of Reference 3 by Business Partner"
+    },
+    "DataExchangeInstruction1": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Data Exchange Instruction 1"
+    },
+    "DataExchangeInstruction2": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Data Exchange Instruction 2"
+    },
+    "DataExchangeInstruction3": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Data Exchange Instruction 3"
+    },
+    "DataExchangeInstruction4": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Data Exchange Instruction 4"
+    },
+    "Region": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Region",
+     "@sap.quickinfo": "Region (State, Province, County)"
+    },
+    "HasPaymentOrder": {
+     "type": "cds.Boolean",
+     "@sap.label": "Payment Sent",
+     "@sap.quickinfo": "Indicator: Payment Order Exists for this Item"
+    },
+    "PaymentReference": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Payment Reference"
+    },
+    "TaxDeterminationDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Tx Determination Dte",
+     "@sap.quickinfo": "Date for Determination of Tax Rates"
+    },
+    "ClearingItem": {
+     "type": "cds.Decimal",
+     "precision": 5,
+     "scale": 0,
+     "@sap.label": "Clearing Item"
+    },
+    "BusinessPlace": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Place"
+    },
+    "TaxSection": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Tax Section"
+    },
+    "CostCtrActivityType": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Activity Type"
+    },
+    "AccountsReceivableIsPledged": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Accounts Receivable Is Pledged"
+    },
+    "BusinessProcess": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Business Process"
+    },
+    "GrantID": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Grant"
+    },
+    "FunctionalArea": {
+     "type": "cds.String",
+     "length": 16,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Functional Area"
+    },
+    "FunctionalAreaName": {
+     "type": "cds.String",
+     "length": 30,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Functional Area Name"
+    },
+    "CustomerIsInExecution": {
+     "type": "cds.Boolean",
+     "@sap.label": "Customer Is In Execution"
+    },
+    "FundedProgram": {
+     "type": "cds.String",
+     "length": 24,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Funded Program"
+    },
+    "ClearingDocFiscalYear": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Fiscal Year of Clearing Journal Entry"
+    },
+    "LedgerGLLineItem": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Journal Entry Item",
+     "@sap.quickinfo": "General Ledger Journal Entry Line Item"
+    },
+    "Segment": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Segment",
+     "@sap.quickinfo": "Segment for Segmental Reporting"
+    },
+    "SegmentName": {
+     "type": "cds.String",
+     "length": 50,
+     "@sap.label": "Segment Name"
+    },
+    "PartnerSegment": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Partner Segment",
+     "@sap.quickinfo": "Partner Segment for Segmental Reporting"
+    },
+    "PartnerFunctionalArea": {
+     "type": "cds.String",
+     "length": 16,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Partner Func. Area",
+     "@sap.quickinfo": "Partner Functional Area"
+    },
+    "HouseBankAccount": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "House Bank Account"
+    },
+    "CostElement": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Cost Element"
+    },
+    "SEPAMandate": {
+     "type": "cds.String",
+     "length": 35,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "SEPA Mandate",
+     "@sap.quickinfo": "Unique Reference to Mandate for each Payee"
+    },
+    "ReferenceDocumentType": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reference Document Type"
+    },
+    "OriginalReferenceDocument": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Original Reference Document"
+    },
+    "ReferenceDocumentLogicalSystem": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Ref. Doc. Lgcl Syst.",
+     "@sap.quickinfo": "Logical System of Reference Document"
+    },
+    "AccountingDocumentItemRef": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Journal Entry Line Item Reference"
+    },
+    "FiscalPeriod": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Fiscal Period"
+    },
+    "AccountingDocumentCategory": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Journal Entry Category"
+    },
+    "AccountingDocumentCategoryName": {
+     "type": "cds.String",
+     "length": 60,
+     "@sap.label": "Journal Entry Category Name"
+    },
+    "PostingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Posting Date"
+    },
+    "DocumentDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Journal Entry Date"
+    },
+    "AccountingDocumentType": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Journal Entry Type"
+    },
+    "AccountingDocumentTypeName": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.label": "Journal Entry Type Name",
+     "@sap.quickinfo": "Document Type Name"
+    },
+    "NetDueDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Net Due Date",
+     "@sap.quickinfo": "Due Date for Net Payment"
+    },
+    "CashDiscount1DueDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Cash Disc 1 Due Date",
+     "@sap.quickinfo": "Due Date for Cash Discount 1"
+    },
+    "CashDiscount2DueDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Cash Disc 2 Due Date",
+     "@sap.quickinfo": "Cash Discount 2 Due Date"
+    },
+    "OffsettingAccount": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Offsetting Account"
+    },
+    "OffsettingAccountType": {
+     "type": "cds.String",
+     "length": 1,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Offset Acct Type",
+     "@sap.quickinfo": "Offsetting Account Type"
+    },
+    "PartnerFund": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Partner Fund"
+    },
+    "PartnerGrant": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Partner Grant"
+    },
+    "BudgetPeriod": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Budget Period"
+    },
+    "PartnerBudgetPeriod": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Par. Budget Per.",
+     "@sap.quickinfo": "FM: Partner Budget Period"
+    },
+    "BranchCode": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Branch Code"
+    },
+    "JointVentureProductionDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Joint Venture Production Date"
+    },
+    "CompanyCodeCurrency": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Company Code Currency",
+     "@sap.semantics": "currency-code"
+    },
+    "AmountInCompanyCodeCurrency": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "CompanyCodeCurrency",
+     "@sap.label": "Amount in Company Code Currency"
+    },
+    "TaxAmountInCoCodeCrcy": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "CompanyCodeCurrency",
+     "@sap.label": "Tax Amount in Company Code Currency",
+     "@sap.quickinfo": "Signed Tax Amount in Company Code Currency"
+    },
+    "TaxBaseAmountInCoCodeCrcy": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "CompanyCodeCurrency",
+     "@sap.label": "TxBaseAmt CoCodeCrcy",
+     "@sap.quickinfo": "Tax Base Amount in Company Code Currency"
+    },
+    "ValuationDiffAmtInCoCodeCrcy": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "CompanyCodeCurrency",
+     "@sap.label": "Valuation Difference Amount In CC Crcy",
+     "@sap.quickinfo": "Valuation Difference Amount In Company Code Currency"
+    },
+    "CashDiscountAmtInCoCodeCrcy": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "CompanyCodeCurrency",
+     "@sap.label": "CashD Amt in CC Crcy",
+     "@sap.quickinfo": "Cash Discount Amount in Company Code Currency"
+    },
+    "InvoiceAmtInCoCodeCrcy": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "CompanyCodeCurrency",
+     "@sap.label": "Invc.Amt CoCode Crcy",
+     "@sap.quickinfo": "Invoice Amount in Company Code Currency"
+    },
+    "TransactionCurrency": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Transaction Currency",
+     "@sap.semantics": "currency-code"
+    },
+    "AmountInTransactionCurrency": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Amount in Transaction Currency"
+    },
+    "OriginalTaxBaseAmount": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Origl Tax Base Amt",
+     "@sap.quickinfo": "Original Tax Base Amount in Transaction Currency"
+    },
+    "TaxAmount": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Tax Amount",
+     "@sap.quickinfo": "Tax Amount in Transaction Currency"
+    },
+    "TaxBaseAmountInTransCrcy": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Tx Bse Amt TransCrcy",
+     "@sap.quickinfo": "Tax Base Amount in Transaction Currency"
+    },
+    "WithholdingTaxBaseAmount": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Withholding T.B. Amt",
+     "@sap.quickinfo": "Withholding Tax Base Amount"
+    },
+    "PlannedAmtInTransactionCrcy": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Plnd Amt Trans. Crcy",
+     "@sap.quickinfo": "Planned Amount in Transaction Currency"
+    },
+    "CashDiscountBaseAmount": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Cash Dscnt Base Amt",
+     "@sap.quickinfo": "Cash Discount Base Amount"
+    },
+    "CashDiscountAmount": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Cash Discount Amount"
+    },
+    "NetPaymentAmount": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Net Payment Amount"
+    },
+    "WithholdingTaxAmount": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Withholding Tax Amt",
+     "@sap.quickinfo": "Withholding Tax Amount"
+    },
+    "WithholdingTaxExemptionAmt": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Withholding T-E Amt",
+     "@sap.quickinfo": "Withholding Tax-Exemption Amount"
+    },
+    "InvoiceAmountInFrgnCurrency": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "TransactionCurrency",
+     "@sap.label": "Invc. Amt Frgn Crcy",
+     "@sap.quickinfo": "Invoice Amount in Foreign Currency"
+    },
+    "BalanceTransactionCurrency": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Balance Transaction Currency",
+     "@sap.semantics": "currency-code"
+    },
+    "AmountInBalanceTransacCrcy": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "BalanceTransactionCurrency",
+     "@sap.label": "Amount in Balance Transaction Currency"
+    },
+    "AdditionalCurrency1": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Additional Crcy 1",
+     "@sap.quickinfo": "Additional Currency 1",
+     "@sap.semantics": "currency-code"
+    },
+    "ValuationDiffAmtInAddlCrcy1": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "AdditionalCurrency1",
+     "@sap.label": "Val. Diff. AddlCrcy1",
+     "@sap.quickinfo": "Valuation Difference Amount in Additional Currency 1"
+    },
+    "AmountInAdditionalCurrency1": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "AdditionalCurrency1",
+     "@sap.label": "Amount in Additional Currency 1"
+    },
+    "AdditionalCurrency2": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Additional Crcy 2",
+     "@sap.quickinfo": "Additional Currency 2",
+     "@sap.semantics": "currency-code"
+    },
+    "AmountInAdditionalCurrency2": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "AdditionalCurrency2",
+     "@sap.label": "Amount in Additional Currency 2"
+    },
+    "ValuationDiffAmtInAddlCrcy2": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "AdditionalCurrency2",
+     "@sap.label": "Val. Diff. AddlCrcy2",
+     "@sap.quickinfo": "Valuation Difference Amount in Additional Currency 2"
+    },
+    "PaymentCurrency": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Autom. Payt. Crcy.",
+     "@sap.quickinfo": "Currency for Automatic Payment",
+     "@sap.semantics": "currency-code"
+    },
+    "AmountInPaymentCurrency": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "PaymentCurrency",
+     "@sap.label": "Amount in Payment Currency"
+    },
+    "CreditControlAreaCurrency": {
+     "type": "cds.String",
+     "length": 5,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Credit Control Area Currency",
+     "@sap.semantics": "currency-code"
+    },
+    "HedgedAmount": {
+     "type": "cds.Decimal",
+     "precision": 24,
+     "scale": 3,
+     "@sap.unit": "CreditControlAreaCurrency",
+     "@sap.label": "Hedged Amount",
+     "@sap.quickinfo": "Credit Management: Hedged Amount"
+    },
+    "BaseUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Base Unit of Measure",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "Quantity": {
+     "type": "cds.Decimal",
+     "precision": 23,
+     "scale": 3,
+     "@sap.unit": "BaseUnit",
+     "@sap.label": "Quantity"
+    },
+    "GoodsMovementEntryUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Unit of Entry",
+     "@sap.quickinfo": "Unit of entry",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "QuantityInEntryUnit": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "GoodsMovementEntryUnit",
+     "@sap.label": "Entry Unit Quantity",
+     "@sap.quickinfo": "Quantity in Entry Unit of Measure"
+    },
+    "PurchasingDocumentPriceUnit": {
+     "type": "cds.String",
+     "length": 3,
+     "@sap.label": "Purchasing Document Price Unit",
+     "@sap.semantics": "unit-of-measure"
+    },
+    "PurchaseOrderQty": {
+     "type": "cds.Decimal",
+     "precision": 13,
+     "scale": 3,
+     "@sap.unit": "PurchasingDocumentPriceUnit",
+     "@sap.label": "Purchase Order Quantity"
+    },
+    "MaterialPriceUnitQty": {
+     "type": "cds.Decimal",
+     "precision": 5,
+     "scale": 0,
+     "@sap.unit": "BaseUnit",
+     "@sap.label": "Material Price Unit Quantity"
+    },
+    "NumberOfItems": {
+     "type": "cds.Decimal",
+     "precision": 12,
+     "scale": 0,
+     "@sap.label": "Number of Items"
+    },
+    "AccountingDocumentCreationDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Entered On",
+     "@sap.quickinfo": "Accounting Document Entry Date"
+    },
+    "CreationTime": {
+     "type": "cds.Time",
+     "@sap.label": "Creation Time"
+    },
+    "LastChangeDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Last Change Date"
+    },
+    "ExchangeRateDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Exchange Rate Date"
+    },
+    "AccountingDocCreatedByUser": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.label": "Journal Entry Created By",
+     "@sap.quickinfo": "User that created the journal entry"
+    },
+    "TransactionCode": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Transaction Code"
+    },
+    "IntercompanyTransaction": {
+     "type": "cds.String",
+     "length": 16,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Intercompany Transac",
+     "@sap.quickinfo": "Intercompany Transaction Number"
+    },
+    "DocumentReferenceID": {
+     "type": "cds.String",
+     "length": 16,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Document Reference ID"
+    },
+    "RecurringAccountingDocument": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Recurring Journal Entry"
+    },
+    "ReverseDocument": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reverse Document"
+    },
+    "ReverseDocumentFiscalYear": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "NonNegative",
+     "@sap.label": "Reverse Document Fiscal Year"
+    },
+    "AccountingDocumentHeaderText": {
+     "type": "cds.String",
+     "length": 25,
+     "@sap.label": "Document Header Text"
+    },
+    "ExchangeRate": {
+     "type": "cds.Decimal",
+     "precision": 9,
+     "scale": 5,
+     "@sap.label": "Exchange Rate"
+    },
+    "BusinessTransactionType": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Bus. Trans. Category",
+     "@sap.quickinfo": "Business Transaction Category"
+    },
+    "BatchInputSession": {
+     "type": "cds.String",
+     "length": 12,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Batch Input Session"
+    },
+    "FinancialManagementArea": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "FM Area",
+     "@sap.quickinfo": "Financial Management Area"
+    },
+    "ReversalIsPlanned": {
+     "type": "cds.Boolean",
+     "@sap.label": "Reversal Is Planned",
+     "@sap.quickinfo": "Indicator: Reversal Is Planned for Document"
+    },
+    "PlannedReversalDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Planned Reversal Dte",
+     "@sap.quickinfo": "Planned Date for the Reversal Posting"
+    },
+    "TaxIsCalculatedAutomatically": {
+     "type": "cds.Boolean",
+     "@sap.label": "Tax Is Automatically Calculated"
+    },
+    "TaxBaseAmountIsNetAmount": {
+     "type": "cds.Boolean",
+     "@sap.label": "Tax Base Amount is Net Amount"
+    },
+    "SourceCompanyCode": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Source Company Code"
+    },
+    "LogicalSystem": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Logical System"
+    },
+    "TaxExchangeRate": {
+     "type": "cds.Decimal",
+     "precision": 9,
+     "scale": 5,
+     "@sap.label": "Tax Exchange Rate"
+    },
+    "ReversalReason": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reversal Reason",
+     "@sap.quickinfo": "Reason for Reversal or Inverse Posting"
+    },
+    "Branch": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Branch"
+    },
+    "Reference1InDocumentHeader": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reference 1",
+     "@sap.quickinfo": "Internal ID of Reference Key 1 in Document Header"
+    },
+    "Reference2InDocumentHeader": {
+     "type": "cds.String",
+     "length": 20,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Reference 2",
+     "@sap.quickinfo": "Internal ID of Reference Key 2 in Document Header"
+    },
+    "InvoiceReceiptDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Invoice Receipt Date"
+    },
+    "Ledger": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Ledger"
+    },
+    "LedgerGroup": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Ledger Group"
+    },
+    "AlternativeReferenceDocument": {
+     "type": "cds.String",
+     "length": 26,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Alternative Reference Document"
+    },
+    "TaxReportingDate": {
+     "type": "cds.Date",
+     "@sap.display.format": "Date",
+     "@sap.label": "Tax Reporting Date"
+    },
+    "AccountingDocumentClass": {
+     "type": "cds.String",
+     "length": 6,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Acctg Document Class",
+     "@sap.quickinfo": "Accounting Document Class"
+    },
+    "ExchangeRateType": {
+     "type": "cds.String",
+     "length": 4,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Exchange Rate Type"
+    },
+    "LatePaymentReason": {
+     "type": "cds.String",
+     "length": 2,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Late Payment Reason"
+    },
+    "SalesDocumentCondition": {
+     "type": "cds.String",
+     "length": 10,
+     "@sap.display.format": "UpperCase",
+     "@sap.label": "Sales Document Condition"
+    },
+    "IsReversal": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is Reversing",
+     "@sap.quickinfo": "Indicator: Item is Reversing Another Item"
+    },
+    "IsReversed": {
+     "type": "cds.Boolean",
+     "@sap.label": "Is Reversed",
+     "@sap.quickinfo": "Indicator: Item is Reversed"
+    }
+   }
+  }
+ }
+}
