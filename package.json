@@ -14,10 +14,12 @@
     "uuid": "^10.0.0"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^1"
+    "@cap-js/sqlite": "^1",
+    "@sap/ux-specification": "^1.120.17"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-project1": "cds watch --open project1/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "fiori": {
@@ -44,5 +46,12 @@
         }
       }
     }
-  }
+  },
+  "sapux": [
+    "app/project1",
+    "app/project1",
+    "app/project1",
+    "app/project1",
+    "app/project1"
+  ]
 }

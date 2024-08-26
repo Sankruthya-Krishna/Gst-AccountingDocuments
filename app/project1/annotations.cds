@@ -1,0 +1,1 @@
+using AccountingDocument as service from '../../srv/service';
